@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CalculadoraSemVisual
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Qual será a operação?");
+            Console.WriteLine("1 - Adição");
+            Console.WriteLine("2 - Subtração");
+            Console.WriteLine("3 - Multiplicação");
+            Console.WriteLine("4 - Divisão\n");
+
+            //Console.ReadLine();
+            int operacao = int.Parse(Console.ReadLine());
+            Console.WriteLine("Qual o primeiro número?");
+            int numero1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Qual o segundo número?");
+            int numero2 = int.Parse(Console.ReadLine());
+            int resultado = 0;
+
+            switch (operacao)
+            {
+                case 1:
+                    {
+                        resultado = Adicao(numero1, numero2);
+                        break;
+                    }
+                case 2:
+                    {
+                        resultado = Subtracao(numero1, numero2);
+                        break;
+                    }
+                case 3:
+                    {
+                        resultado = Multiplicacao(numero1, numero2);
+                        break;
+                    }
+                case 4:
+                    {
+                        resultado = Divisao(numero1, numero2);
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("Digite um número válido!");
+                        break;
+                    }
+            }
+            Console.WriteLine("Resultado: {0}", resultado);
+            Console.WriteLine("Até a próxima.");
+            Console.ReadLine();
+        }
+
+        public static int Adicao(int num1, int num2)
+        {
+            int result = num1 + num2;
+            return result;
+        }
+        public static int Subtracao(int num1, int num2)
+        {
+            int result = num1 - num2;
+            return result;
+        }
+        public static int Multiplicacao(int num1, int num2)
+        {
+            int result = num1 * num2;
+            return result;
+        }
+        public static int Divisao(int num1, int num2)
+        {
+            int result = num1 / num2;
+            return result;
+        }
+    }
+}
