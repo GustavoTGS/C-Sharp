@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Atividade1502
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string sexo = "";
+            int tamanho = 3;
+            string[] nomes = new string[tamanho];
+            string[] nomeFem = new string[tamanho];
+            string[] nomeMas = new string[tamanho];
+
+            for (int percorrer = 0; percorrer < nomes.Length; percorrer++)
+            {
+                Console.WriteLine("Digite F para feminino e M para masculino:");
+                sexo = Console.ReadLine();
+                Console.WriteLine("Digite o nome:");
+                nomes[percorrer] += Console.ReadLine();
+                switch (sexo)
+                {
+                    case "F":
+                        nomeFem[percorrer] = nomes[percorrer];
+                        break;
+                    case "f":
+                        nomeFem[percorrer] = nomes[percorrer];
+                        break;
+                    case "M":
+                        nomeMas[percorrer] = nomes[percorrer];
+                        break;
+                    case "m":
+                        nomeMas[percorrer] = nomes[percorrer];
+                        break;
+                    default:
+                        Console.WriteLine("Digite certo");
+                        break;
+                }
+            }
+            Console.WriteLine("Nomes Femininos:");
+            for (int percorrer2 = 0; percorrer2 < tamanho; percorrer2++)
+            {
+                Console.WriteLine(nomeFem[percorrer2]);
+            }
+            Console.WriteLine("Nomes Masculinos:");
+            for (int percorrer3 = 0; percorrer3 < tamanho; percorrer3++)
+            {
+                Console.WriteLine(nomeMas[percorrer3]);
+            }
+            Console.ReadKey();
+        }
+    }
+}
