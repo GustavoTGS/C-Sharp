@@ -10,54 +10,115 @@ namespace CalculadoraSemVisual
     {
         static void Main(string[] args)
         {
-
+            bool rodando = true;
+            int resultado = 0, numero1 = 0, numero2 = 0, operacao = 0;
+            while (rodando == true)
+            {
+                operacao = Operacao(operacao);
+                switch (operacao)
+                {
+                    case 1:
+                        {
+                            numero1 = LerNumeroUm(numero1);
+                            numero2 = LerNumeroDois(numero2);
+                            resultado = Adicao(numero1, numero2);
+                            Imprimir(resultado);
+                            LimpaVariavel(numero1, numero2, resultado, operacao);
+                            break;
+                        }
+                    case 2:
+                        {
+                            numero1 = LerNumeroUm(numero1);
+                            numero2 = LerNumeroDois(numero2);
+                            resultado = Subtracao(numero1, numero2);
+                            Imprimir(resultado);
+                            LimpaVariavel(numero1, numero2, resultado, operacao);
+                            break;
+                        }
+                    case 3:
+                        {
+                            numero1 = LerNumeroUm(numero1);
+                            numero2 = LerNumeroDois(numero2);
+                            resultado = Multiplicacao(numero1, numero2);
+                            Imprimir(resultado);
+                            LimpaVariavel(numero1, numero2, resultado, operacao);
+                            break;
+                        }
+                    case 4:
+                        {
+                            numero1 = LerNumeroUm(numero1);
+                            numero2 = LerNumeroDois(numero2);
+                            resultado = Divisao(numero1, numero2);
+                            Imprimir(resultado);
+                            LimpaVariavel(numero1, numero2, resultado, operacao);
+                            break;
+                        }
+                    case 5:
+                        {
+                            numero1 = LerNumeroUm(numero1);
+                            resultado = Raiz(numero1);
+                            Imprimir(resultado);
+                            LimpaVariavel(numero1, numero2, resultado, operacao);
+                            break;
+                        }
+                    case 6:
+                        {
+                            numero1 = LerNumeroUm(numero1);
+                            numero2 = LerNumeroDois(numero2);
+                            resultado = Porcentagem(numero1, numero2);
+                            Imprimir(resultado);
+                            LimpaVariavel(numero1, numero2, resultado, operacao);
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Número não permitido!");
+                            LimpaVariavel(numero1, numero2, resultado, operacao);
+                            break;
+                        }
+                }
+                    Console.ReadKey();
+            }
+        }
+        public static void LimpaVariavel(int numero1, int numero2, int resultado, int operacao)
+        {
+            numero1 = 0;
+            numero2 = 0;
+            resultado = 0;
+            operacao = 0;
+        }
+        public static int Operacao(int operador)
+        {
             Console.WriteLine("Qual será a operação?");
             Console.WriteLine("1 - Adição");
             Console.WriteLine("2 - Subtração");
             Console.WriteLine("3 - Multiplicação");
-            Console.WriteLine("4 - Divisão\n");
-
-            //Console.ReadLine();
-            int operacao = int.Parse(Console.ReadLine());
-            Console.WriteLine("Qual o primeiro número?");
-            int numero1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Qual o segundo número?");
-            int numero2 = int.Parse(Console.ReadLine());
-            int resultado = 0;
-
-            switch (operacao)
-            {
-                case 1:
-                    {
-                        resultado = Adicao(numero1, numero2);
-                        break;
-                    }
-                case 2:
-                    {
-                        resultado = Subtracao(numero1, numero2);
-                        break;
-                    }
-                case 3:
-                    {
-                        resultado = Multiplicacao(numero1, numero2);
-                        break;
-                    }
-                case 4:
-                    {
-                        resultado = Divisao(numero1, numero2);
-                        break;
-                    }
-                default:
-                    {
-                        Console.WriteLine("Digite um número válido!");
-                        break;
-                    }
-            }
+            Console.WriteLine("4 - Divisão");
+            Console.WriteLine("5 - Raiz");
+            Console.WriteLine("6 - Porcentagem");
+            Console.WriteLine("----------------------");
+            operador = int.Parse(Console.ReadLine());
+            return operador;
+        }
+        public static void Imprimir(int resultado)
+        {
             Console.WriteLine("Resultado: {0}", resultado);
-            Console.WriteLine("Até a próxima.");
-            Console.ReadLine();
+            Console.WriteLine("Até a próxima.\nTecle Enter para uma nova operação");
+            Console.WriteLine("----------------------");
         }
 
+        public static int LerNumeroUm(int num1) 
+        {
+            Console.WriteLine("Qual o número?");
+            num1 = int.Parse(Console.ReadLine());
+            return num1;
+        }
+        public static int LerNumeroDois(int num2)
+        {
+            Console.WriteLine("Qual o segundo número?");
+            num2 = int.Parse(Console.ReadLine());
+            return num2;  
+        }
         public static int Adicao(int num1, int num2)
         {
             int result = num1 + num2;
@@ -76,6 +137,16 @@ namespace CalculadoraSemVisual
         public static int Divisao(int num1, int num2)
         {
             int result = num1 / num2;
+            return result;
+        }
+        public static int Raiz(int num1)
+        {
+            int result = (int)Math.Sqrt(num1);
+            return result;
+        }
+        public static int Porcentagem(int num1, int num2)
+        {
+            int result = num2/100*num1;
             return result;
         }
     }
