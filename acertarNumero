@@ -1,0 +1,29 @@
+using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Random rdm = new Random();
+        int numeroCerto = rdm.Next(1,10);
+        int numeroJogador = 0, tentativas = 0;
+        Console.WriteLine("Advinhe o número que a máquina escolheu!\n");
+        Inicio:
+        Console.Write("Qual seu número?");
+        numeroJogador = int.Parse(Console.ReadLine());
+        if (numeroJogador == numeroCerto)
+        {
+            Console.WriteLine("PARABÉNS VOCÊ ACERTOU!");
+            Console.WriteLine("Número da máquina foi {0}, o seu número escolhido foi {1} em {2} tentativas\n",numeroCerto, numeroJogador, tentativas);
+        }
+        else
+        {
+            tentativas++;
+            Console.Clear();
+            Console.WriteLine("Não é esse, tente de novo\n");
+            goto Inicio;
+        }
+        Console.ReadKey();
+    }
+}
+
