@@ -1,0 +1,143 @@
+using System;
+
+namespace desafio1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int opção = 0;
+            int opção2 = 0;
+            float valor = 0;
+            int aux = 0;
+            float valorMult = 0;
+
+            string[] Alimentos = new string[7];
+
+            Alimentos[0] = "Leite Integral ";
+            Alimentos[1] = "Pão ";
+            Alimentos[2] = "Bolo ";
+            Alimentos[3] = "Arroz ";
+            Alimentos[4] = "Bolacha ";
+            Alimentos[5] = "Refrigerante ";
+            Alimentos[6] = "Salgadinho ";
+
+
+            float[] preço = new float[7];
+
+            preço[0] = 4.99f;
+            preço[1] = 0.40f;
+            preço[2] = 10.00f;
+            preço[3] = 15.99f;
+            preço[4] = 2.49f;
+            preço[5] = 7.99f;
+            preço[6] = 3.00f;
+
+            string[] alimentosEscolhidos = new string[7];
+            float[] precoDosProdutos = new float[7];
+
+
+            Console.WriteLine("Mercadinho TI 108\n\n");
+            Console.WriteLine("1 - " + Alimentos[0] + "-" + "  R$" + preço[0] + " UN\n" +
+                "2 - " + Alimentos[1] + "-" + "  R$ " + preço[1] + "0" + " UN\n" +
+                "3 - " + Alimentos[2] + "-" + "  R$ " + preço[2] + ",00" + " UN\n" +
+                "4 - " + Alimentos[3] + "-" + "  R$ " + preço[3] + " 5Kg\n" +
+                "5 - " + Alimentos[4] + "-" + "  R$ " + preço[4] + " UN\n" +
+                "6 - " + Alimentos[5] + "-" + "  R$ " + preço[5] + " UN\n" +
+                "7 - " + Alimentos[6] + "-" + "  R$ " + preço[6] + ",00" + " UN\n");
+
+        Inicio:
+            Console.WriteLine("Escolha o seu produto ou digite 0 para ver o valor total da sua notafiscal.");
+            opção = int.Parse(Console.ReadLine());
+
+
+            switch (opção)
+            {
+                case 0:
+                    break;
+                case 1:
+                    Console.WriteLine("\nQuantas unidades?");
+                    opção2 = int.Parse(Console.ReadLine());
+                    valorMult = preço[opção - 1] * opção2;
+                    Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + " X " + opção2 + " = " + valorMult);
+                    alimentosEscolhidos[aux] = Alimentos[opção - 1];
+                    precoDosProdutos[aux] = preço[opção - 1];
+                    aux++;
+                    valor += valorMult;
+                    goto Inicio;
+                case 2:
+                    Console.WriteLine("\nQuantas unidades?");
+                    opção2 = int.Parse(Console.ReadLine());
+                    valorMult = preço[opção - 1] * opção2;
+                    Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + "0" + " X " + opção2 + " = " + valorMult + ",00");
+                    alimentosEscolhidos[aux] = Alimentos[opção - 1];
+                    precoDosProdutos[aux] = preço[opção - 1];
+                    aux++;
+                    valor += valorMult;
+                    goto Inicio;
+                case 3:
+                    Console.WriteLine("\nQuantas unidades?");
+                    opção2 = int.Parse(Console.ReadLine());
+                    valorMult = preço[opção - 1] * opção2;
+                    Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + ",00" + " X " + opção2 + " = " + valorMult + ",00");
+                    alimentosEscolhidos[aux] = Alimentos[opção - 1];
+                    precoDosProdutos[aux] = preço[opção - 1];
+                    aux++;
+                    valor += valorMult;
+                    goto Inicio;
+                case 4:
+                    Console.WriteLine("\nQuantas unidades?");
+                    opção2 = int.Parse(Console.ReadLine());
+                    valorMult = preço[opção - 1] * opção2;
+                    Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + " X " + opção2 + " = " + valorMult);
+                    alimentosEscolhidos[aux] = Alimentos[opção - 1];
+                    precoDosProdutos[aux] = preço[opção - 1];
+                    aux++;
+                    valor += valorMult;
+                    goto Inicio;
+                case 5:
+                    Console.WriteLine("\nQuantas unidades?");
+                    opção2 = int.Parse(Console.ReadLine());
+                    valorMult = preço[opção - 1] * opção2;
+                    Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + " X " + opção2 + " = " + valorMult);
+                    alimentosEscolhidos[aux] = Alimentos[opção - 1];
+                    precoDosProdutos[aux] = preço[opção - 1];
+                    aux++;
+                    valor += valorMult;
+                    goto Inicio;
+                case 6:
+                    Console.WriteLine("\nQuantas unidades?");
+                    opção2 = int.Parse(Console.ReadLine());
+                    valorMult = preço[opção - 1] * opção2;
+                    Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + " X " + opção2 + " = " + valorMult);
+                    alimentosEscolhidos[aux] = Alimentos[opção - 1];
+                    precoDosProdutos[aux] = preço[opção - 1];
+                    aux++;
+                    valor += valorMult;
+                    goto Inicio;
+                case 7:
+                    Console.WriteLine("\nQuantas unidades?");
+                    opção2 = int.Parse(Console.ReadLine());
+                    valorMult = preço[opção - 1] * opção2;
+                    Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + ",00" + " X " + opção2 + " = " + valorMult + ",00");
+                    alimentosEscolhidos[aux] = Alimentos[opção - 1];
+                    precoDosProdutos[aux] = preço[opção - 1];
+                    aux++;
+                    valor += valorMult;
+                    goto Inicio;
+            }
+            for (int i = 0; i < alimentosEscolhidos.Length; i++)
+            {
+                Console.Write(alimentosEscolhidos[i] + " " + precoDosProdutos[i] + "\n");
+                if (alimentosEscolhidos[i] == null || precoDosProdutos[i] == 0)
+                {
+                    continue;
+                }
+                Console.WriteLine(" Total " + valor);
+            }
+            Console.ReadKey();
+        }
+
+
+    }
+}
