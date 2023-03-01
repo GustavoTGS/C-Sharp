@@ -23,31 +23,31 @@ namespace desafio1
             Alimentos[6] = "Salgadinho ";
 
 
-            float[] preço = new float[7];
+            int[] preço = new int[7];
 
-            preço[0] = 4.99f;
-            preço[1] = 0.40f;
-            preço[2] = 10.00f;
-            preço[3] = 15.99f;
-            preço[4] = 2.49f;
-            preço[5] = 7.99f;
-            preço[6] = 3.00f;
+            preço[0] = 5;
+            preço[1] = 1;
+            preço[2] = 10;
+            preço[3] = 16;
+            preço[4] = 3;
+            preço[5] = 8;
+            preço[6] = 3;
 
             string[] alimentosEscolhidos = new string[7];
-            float[] precoDosProdutos = new float[7];
+            int[] precoDosProdutos = new int[7];
 
 
             Console.WriteLine("Mercadinho TI 108\n\n");
-            Console.WriteLine("1 - " + Alimentos[0] + "-" + "  R$" + preço[0] + " UN\n" +
-                "2 - " + Alimentos[1] + "-" + "  R$ " + preço[1] + "0" + " UN\n" +
+            Console.WriteLine("1 - " + Alimentos[0] + "-" + "  R$" + preço[0] + ",00" + " UN\n" +
+                "2 - " + Alimentos[1] + "-" + "  R$ " + preço[1] + ",00" + " UN\n" +
                 "3 - " + Alimentos[2] + "-" + "  R$ " + preço[2] + ",00" + " UN\n" +
-                "4 - " + Alimentos[3] + "-" + "  R$ " + preço[3] + " 5Kg\n" +
-                "5 - " + Alimentos[4] + "-" + "  R$ " + preço[4] + " UN\n" +
-                "6 - " + Alimentos[5] + "-" + "  R$ " + preço[5] + " UN\n" +
+                "4 - " + Alimentos[3] + "-" + "  R$ " + preço[3] + ",00" + " 5Kg\n" +
+                "5 - " + Alimentos[4] + "-" + "  R$ " + preço[4] + ",00" + " UN\n" +
+                "6 - " + Alimentos[5] + "-" + "  R$ " + preço[5] + ",00" + " UN\n" +
                 "7 - " + Alimentos[6] + "-" + "  R$ " + preço[6] + ",00" + " UN\n");
 
         Inicio:
-            Console.WriteLine("Escolha o seu produto ou digite 0 para ver o valor total da sua notafiscal.");
+            Console.WriteLine("\nEscolha o seu produto ou digite 0 para ver o valor total da sua Nota Fiscal.");
             opção = int.Parse(Console.ReadLine());
 
 
@@ -56,7 +56,7 @@ namespace desafio1
                 case 0:
                     break;
                 case 1:
-                    Console.WriteLine("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades?");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
                     Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + " X " + opção2 + " = " + valorMult);
@@ -66,27 +66,27 @@ namespace desafio1
                     valor += valorMult;
                     goto Inicio;
                 case 2:
-                    Console.WriteLine("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades?");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
-                    Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + "0" + " X " + opção2 + " = " + valorMult + ",00");
+                    Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + "0" + " X " + opção2 + " = " + valorMult + ",0");
                     alimentosEscolhidos[aux] = Alimentos[opção - 1];
                     precoDosProdutos[aux] = preço[opção - 1];
                     aux++;
                     valor += valorMult;
                     goto Inicio;
                 case 3:
-                    Console.WriteLine("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades?");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
-                    Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + ",00" + " X " + opção2 + " = " + valorMult + ",00");
+                    Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + ",00" + " X " + opção2 + " = " + valorMult);
                     alimentosEscolhidos[aux] = Alimentos[opção - 1];
                     precoDosProdutos[aux] = preço[opção - 1];
                     aux++;
                     valor += valorMult;
                     goto Inicio;
                 case 4:
-                    Console.WriteLine("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades?");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
                     Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + " X " + opção2 + " = " + valorMult);
@@ -96,7 +96,7 @@ namespace desafio1
                     valor += valorMult;
                     goto Inicio;
                 case 5:
-                    Console.WriteLine("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades?");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
                     Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + " X " + opção2 + " = " + valorMult);
@@ -106,7 +106,7 @@ namespace desafio1
                     valor += valorMult;
                     goto Inicio;
                 case 6:
-                    Console.WriteLine("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades?");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
                     Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + " X " + opção2 + " = " + valorMult);
@@ -116,7 +116,7 @@ namespace desafio1
                     valor += valorMult;
                     goto Inicio;
                 case 7:
-                    Console.WriteLine("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades?");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
                     Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + ",00" + " X " + opção2 + " = " + valorMult + ",00");
@@ -128,13 +128,18 @@ namespace desafio1
             }
             for (int i = 0; i < alimentosEscolhidos.Length; i++)
             {
-                Console.Write(alimentosEscolhidos[i] + " " + precoDosProdutos[i] + "\n");
-                if (alimentosEscolhidos[i] == null || precoDosProdutos[i] == 0)
+                if (precoDosProdutos[i] == 0)
                 {
                     continue;
                 }
-                Console.WriteLine(" Total " + valor);
+                else
+                {
+                    Console.Write("\n");
+                    Console.Write(alimentosEscolhidos[i] + " " + precoDosProdutos[i]);
+                }
             }
+            Console.WriteLine("\n");
+            Console.WriteLine("\nTotal: " + valor + ",00");
             Console.ReadKey();
         }
 
