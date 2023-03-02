@@ -5,25 +5,51 @@ class Program
     public static void Main(string[] args)
     {
         Random rdm = new Random();
-        int numeroCerto = rdm.Next(1,10);
-        int numeroJogador = 0, tentativas = 0;
+        int numeroCerto = rdm.Next(1,100);
+        int numeroJogador = 0, tentativas = 3;
         Console.WriteLine("Advinhe o número que a máquina escolheu!\n");
-        Inicio:
-        Console.Write("Qual seu número?");
-        numeroJogador = int.Parse(Console.ReadLine());
-        if (numeroJogador == numeroCerto)
+        while (tentativas > 0)
         {
-            Console.WriteLine("PARABÉNS VOCÊ ACERTOU!");
-            Console.WriteLine("Número da máquina foi {0}, o seu número escolhido foi {1} em {2} tentativas\n",numeroCerto, numeroJogador, tentativas);
+            Console.Write("Qual seu número?");
+            numeroJogador = int.Parse(Console.ReadLine());
+            if(numeroJogador == numeroCerto)
+            {
+                Acertou(numeroJogador, numeroCerto, tentativas);
+                break;
+            }
+            else
+            {
+                tentativas--;
+                MaiorOuMenor(numeroJogador, numeroCerto, tentativas);
+            }
         }
-        else
+        if (tentativas == 0)
         {
-            tentativas++;
-            Console.Clear();
-            Console.WriteLine("Não é esse, tente de novo\n");
-            goto Inicio;
+            Perdeu(numeroJogador, numeroCerto, tentativas);
         }
         Console.ReadKey();
+    }
+    public static void MaiorOuMenor(int numeroJogador,int numeroCerto, int tentativas)
+    {
+        if (numeroJogador < numeroCerto)
+        {
+            Console.WriteLine("Não é esse...{0} tentativas restantes\n",tentativas);
+            Console.WriteLine("O número da máquina é maior que o número digitado");
+        } else
+        {
+            Console.WriteLine("Não é esse...{0} tentativas restantes\n",tentativas);
+            Console.WriteLine("O número da máquina é menor que número digitado");
+        }
+    }
+    public static void Acertou(int numeroJogador, int numeroCerto, int tentativas)
+    {
+            Console.WriteLine("PARABÉNS VOCÊ ACERTOU!");
+            Console.WriteLine("Número da máquina foi {0}, o seu número escolhido foi {1}\n", numeroCerto, numeroJogador);
+    }
+    public static void Perdeu(int numeroJogador, int numeroCerto, int tentativas)
+    {
+            Console.WriteLine("Você perdeu!");
+            Console.WriteLine("Número da máquina foi {0}, o seu número escolhido foi {1}\n", numeroCerto, numeroJogador);
     }
 }
 
