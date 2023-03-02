@@ -56,7 +56,7 @@ namespace desafio1
                 case 0:
                     break;
                 case 1:
-                    Console.Write("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades? ");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
                     Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + " X " + opção2 + " = " + valorMult);
@@ -66,7 +66,7 @@ namespace desafio1
                     valor += valorMult;
                     goto Inicio;
                 case 2:
-                    Console.Write("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades? ");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
                     Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + "0" + " X " + opção2 + " = " + valorMult + ",0");
@@ -76,7 +76,7 @@ namespace desafio1
                     valor += valorMult;
                     goto Inicio;
                 case 3:
-                    Console.Write("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades? ");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
                     Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + ",00" + " X " + opção2 + " = " + valorMult);
@@ -86,7 +86,7 @@ namespace desafio1
                     valor += valorMult;
                     goto Inicio;
                 case 4:
-                    Console.Write("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades? ");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
                     Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + " X " + opção2 + " = " + valorMult);
@@ -96,7 +96,7 @@ namespace desafio1
                     valor += valorMult;
                     goto Inicio;
                 case 5:
-                    Console.Write("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades? ");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
                     Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + " X " + opção2 + " = " + valorMult);
@@ -106,7 +106,7 @@ namespace desafio1
                     valor += valorMult;
                     goto Inicio;
                 case 6:
-                    Console.Write("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades? ");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
                     Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + " X " + opção2 + " = " + valorMult);
@@ -116,7 +116,7 @@ namespace desafio1
                     valor += valorMult;
                     goto Inicio;
                 case 7:
-                    Console.Write("\nQuantas unidades?");
+                    Console.Write("\nQuantas unidades? ");
                     opção2 = int.Parse(Console.ReadLine());
                     valorMult = preço[opção - 1] * opção2;
                     Console.WriteLine(Alimentos[opção - 1] + preço[opção - 1] + ",00" + " X " + opção2 + " = " + valorMult + ",00");
@@ -126,6 +126,7 @@ namespace desafio1
                     valor += valorMult;
                     goto Inicio;
             }
+            Console.WriteLine("\nNota Fiscal Paulistana");
             for (int i = 0; i < alimentosEscolhidos.Length; i++)
             {
                 if (precoDosProdutos[i] == 0)
@@ -139,10 +140,57 @@ namespace desafio1
                 }
             }
             Console.WriteLine("\n");
-            Console.WriteLine("\nTotal: " + valor + ",00");
+            Console.WriteLine("\nTotal: " + valor + ",00\n");
+            Pagamento(valor);
             Console.ReadKey();
         }
-
-
+        public static void Pagamento(float valor)
+        {
+            int opcaoPagamento = 0;
+            string opcaoParcelar;
+            int parcelar = 0;
+            Inicio:
+            Console.Write("Qual será a forma de pagamento?\n1 - Debito 2 - Credito 3 - Dinheiro ");
+            opcaoPagamento = int.Parse(Console.ReadLine());
+            switch(opcaoPagamento)
+            {
+                case 1:
+                    Console.Write("Debito selecionado...Insira ou aproxime o cartão da máquininha!");
+                    Console.ReadKey();
+                    Console.Write("PAGAMENTO APROVADO!\nPor favor retire o cartão\nObrigado pela preferência, volte sempre♥");
+                    break;
+                case 2:
+                    Console.Write("Credito selecionado...Deseja Parcelar? [s/n] - Obs: até 3x ");
+                    opcaoParcelar= Console.ReadLine();
+                    if (opcaoParcelar == "s")
+                    {
+                        Console.Write("Quantas vezes? ");
+                        parcelar = int.Parse(Console.ReadLine());
+                        Console.Write("R$ {0} parcelado em {1}...{2} parcelas de {3}...Insira ou aproxime o cartão da máquininha!",valor,parcelar,parcelar,valor/parcelar);
+                        Console.ReadKey();
+                        Console.Write("PAGAMENTO APROVADO!\nPor favor retire o cartão.");
+                        Console.ReadKey();
+                        Console.WriteLine("\nObrigado pela preferência, volte sempre♥");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Insira ou aproxime o cartão da máquininha!");
+                        Console.ReadKey();
+                        Console.Write("PAGAMENTO APROVADO!\nPor favor retire o cartão.\n");
+                        Console.ReadKey();
+                        Console.WriteLine("\nObrigado pela preferência, volte sempre♥");
+                    }
+                    break;
+                case 3:
+                    Console.Write("R$ {0} por favor.", valor);
+                    Console.ReadKey();
+                    Console.Write("\nObrigado pela preferência, volte sempre♥");
+                    break;
+                default: 
+                    Console.WriteLine("Forma de pagamento inválida, selecione uma das opções corretas!");
+                    Console.Clear();
+                    goto Inicio;
+            }
+        }
     }
 }
