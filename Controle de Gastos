@@ -1,0 +1,103 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace temporario2
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int Entradas = 0;
+            int Saídas = 0;
+            int[] quatroSemanas = new int[4];
+            int[] valorMeses = new int[12];
+            string[] meses = new string[12] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" };
+            Console.WriteLine("Controle de Gastos");
+            for (int percorrer = 0; percorrer < meses.Length; percorrer++)
+            {
+                Console.WriteLine("\n\nMês de {0}\n\n", meses[percorrer]);
+                Semanal(Entradas, Saídas, quatroSemanas, valorMeses);
+            }
+            QualMesMaior(valorMeses);
+            Console.ReadKey();
+        }
+        public static void Semanal(int Entradas, int Saídas, int[] quatroSemanas, int[] valorMeses)
+        {
+            int aux = 0, aux2 = 0, totalEntrada = 0, totalSaida = 0;
+            while (aux < 4){
+                Console.WriteLine("Semana {0}:", aux + 1);
+                Console.Write("Entradas:");
+                Entradas = int.Parse(Console.ReadLine());
+                totalEntrada += Entradas;
+                Console.Write("Saídas:");
+                Saídas = int.Parse(Console.ReadLine());
+                totalSaida += Saídas;
+                quatroSemanas[aux] = Saídas;
+                aux++;
+            }
+            QualSemanaMaior(quatroSemanas);
+            QualSemanaMenor(quatroSemanas);
+            Console.WriteLine("Total de ganhos no mês: "+ totalEntrada);
+            Console.WriteLine("Total de gastos no mês: "+ totalSaida);
+            valorMeses[aux2] = totalSaida;
+            aux2++;
+            Console.WriteLine("Saldo do mês:{0} ", totalEntrada-totalSaida);
+        }
+        public static void QualSemanaMaior(int[] quatroSemanas)
+        {
+            if (quatroSemanas[0] > quatroSemanas[1] && quatroSemanas[0] > quatroSemanas[2] && quatroSemanas[0] > quatroSemanas[3])
+            {
+                Console.Write("\nSua semana com maior gasto foi a 1°\n");
+            }
+            else if (quatroSemanas[1] > quatroSemanas[0] && quatroSemanas[1] > quatroSemanas[2] && quatroSemanas[1] > quatroSemanas[3])
+            {
+                Console.Write("\nSua semana com maior gasto foi a 2°\n");
+            }
+            else if (quatroSemanas[2] > quatroSemanas[0] && quatroSemanas[2] > quatroSemanas[1] && quatroSemanas[2] > quatroSemanas[3])
+            {
+                Console.Write("\nSua semana com maior gasto foi a 3°\n");
+            }
+            else if (quatroSemanas[3] > quatroSemanas[0] && quatroSemanas[3] > quatroSemanas[1] && quatroSemanas[3] > quatroSemanas[1])
+            {
+                Console.Write("\nSua semana com maior gasto foi a 4°\n");
+            }
+        }
+        public static void QualSemanaMenor(int[] quatroSemanas)
+        {
+            if (quatroSemanas[0] < quatroSemanas[1] && quatroSemanas[0] < quatroSemanas[2] && quatroSemanas[0] < quatroSemanas[3])
+            {
+                Console.Write("\nSua semana com menor gasto foi a 1°\n");
+            }
+            if (quatroSemanas[1] < quatroSemanas[0] && quatroSemanas[1] < quatroSemanas[2] && quatroSemanas[1] < quatroSemanas[3])
+            {
+                Console.Write("\nSua semana com menor gasto foi a 2°\n");
+            }
+            if (quatroSemanas[2] < quatroSemanas[0] && quatroSemanas[2] < quatroSemanas[1] && quatroSemanas[2] < quatroSemanas[3])
+            {
+                Console.Write("\nSua semana com menor gasto foi a 3°\n");
+            }
+            if (quatroSemanas[3] < quatroSemanas[0] && quatroSemanas[3] < quatroSemanas[1] && quatroSemanas[3] < quatroSemanas[1])
+            {
+                Console.Write("\nSua semana com menor gasto foi a 4°\n");
+            }
+        }
+        public static void QualMesMaior(int[] valorMeses)
+        {
+            int temp = 0;
+            for(int i = 0; i<valorMeses.Length; i++)
+            {
+                for (int j = 1; j < valorMeses.Length; j++)
+                {
+                    if (valorMeses[i] > valorMeses[j])
+                    {
+                        temp = valorMeses[i];
+                    }
+                }
+            }
+            Console.Write("Maior gasto mensal no ano foi de :{0}", temp);
+        }
+    }
+}
