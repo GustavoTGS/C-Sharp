@@ -60,7 +60,7 @@ namespace Formulario
             int[] quantidade1 = new int[3];
             #endregion vetores
 
-            Console.WriteLine("Comanda TI 108♥\n\n");
+            Console.WriteLine("Comanda TI 108 ♥\n\n");
             Console.Write("Digite seu nome:");
             clientenome = Console.ReadLine();
             Console.Write("Digite sua idade:");
@@ -89,7 +89,7 @@ namespace Formulario
             }
 
 
-            if (Opções >= 7 && Opções <= 12)
+            if (Opções >= 8 && Opções <= 12)
             {
                 switch (texto)
 
@@ -112,83 +112,143 @@ namespace Formulario
                 switch (Opções)
                 {
                     case 1:
-                        NotaFiscal[Aux] = Alimentos[0];
-                        valorNotaFiscal[Aux] = preço[0];
-                        Quantia += preço[0];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções - 1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                     case 2:
-                        NotaFiscal[Aux] = Alimentos[1];
-                        valorNotaFiscal[Aux] = preço[1];
-                        Quantia += preço[1];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções-1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                     case 3:
-                        NotaFiscal[Aux] = Alimentos[2];
-                        valorNotaFiscal[Aux] = preço[2];
-                        Quantia += preço[2];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções - 1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                     case 4:
-                        NotaFiscal[Aux] = Alimentos[3];
-                        valorNotaFiscal[Aux] = preço[3];
-                        Quantia += preço[3];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções - 1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                     case 5:
-                        NotaFiscal[Aux] = Alimentos[4];
-                        valorNotaFiscal[Aux] = preço[4];
-                        Quantia += preço[4];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções - 1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                     case 6:
-                        NotaFiscal[Aux] = Alimentos[5];
-                        valorNotaFiscal[Aux] = preço[5];
-                        Quantia += preço[5];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções - 1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                     case 7:
-                        NotaFiscal[Aux] = Alimentos[6];
-                        valorNotaFiscal[Aux] = preço[6];
-                        Quantia += preço[6];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções - 1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                 }
 
             }
-            else if (Opções > 7 && Opções <= 12)
+            else if (Opções >= 8 && Opções <= 12)
             {
                 switch (Opções)
                 {
                     case 8:
-                        NotaFiscal[Aux] = Bebidas_Alcoólicas[0];
-                        valorNotaFiscal[Aux] = preço[7];
-                        Quantia += preço[7];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções - 1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                     case 9:
-                        NotaFiscal[Aux] = Bebidas_Alcoólicas[1];
-                        valorNotaFiscal[Aux] = preço[8];
-                        Quantia += preço[8];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções - 1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                     case 10:
-                        NotaFiscal[Aux] = Bebidas_Alcoólicas[2];
-                        valorNotaFiscal[Aux] = preço[9];
-                        Quantia += preço[9];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções - 1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                     case 11:
-                        NotaFiscal[Aux] = Bebidas_Alcoólicas[3];
-                        valorNotaFiscal[Aux] = preço[10];
-                        Quantia += preço[10];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções - 1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                     case 12:
-                        NotaFiscal[Aux] = Bebidas_Alcoólicas[4];
-                        valorNotaFiscal[Aux] = preço[11];
-                        Quantia += preço[11];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções - 1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                 }
 
@@ -199,34 +259,33 @@ namespace Formulario
                 switch (Opções)
                 {
                     case 13:
-                        NotaFiscal[Aux] = Bebidas_Alcoólicas[0];
-                        valorNotaFiscal[Aux] = preço[12];
-                        Quantia += preço[12];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções - 1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                     case 14:
-                        NotaFiscal[Aux] = Bebidas_Alcoólicas[1];
-                        valorNotaFiscal[Aux] = preço[13];
-                        Quantia += preço[13];
+                        Console.Write("Quantas unidades? ");
+                        quantidade = int.Parse(Console.ReadLine());
+                        valorNotaFiscal[Aux] += preço[Opções - 1];
+                        Quantia += preço[Opções - 1] * quantidade;
+                        quantidade1[Aux2] = quantidade;
+                        Aux2++;
+                        NotaFiscal[Aux] = Alimentos[Opções - 1];
                         Aux++;
+                        Console.WriteLine("{0} - R$ {1} x {2}\n", Alimentos[Opções - 1], preço[Opções - 1], quantidade);
                         break;
                     default:
                         Console.Write("Digite uma opção válida");
                         goto Inicio;
                         break;
                 }
-
-
-            }
-
-
-           
-            Console.Write("Quantas unidades? ");
-            quantidade = int.Parse(Console.ReadLine());
-            valorNotaFiscal[Aux] += preço[Opções];
-            Quantia += preço[Opções] * quantidade;
-            quantidade1[Aux2] = quantidade;
-            Aux2++;
+            }            
             Console.Write("Deseja comprar mais alguma coisa? [Y/N] ");
             continuar = Console.ReadLine();
             if (continuar == "Y" || continuar == "y" || continuar == "yes" || continuar == "sim" || continuar == "Sim")
@@ -236,8 +295,10 @@ namespace Formulario
             else
             {
                 MostrarNotaFiscal(NotaFiscal, Quantia, clientenome, valorNotaFiscal, quantidade1);
-            }
                 Console.ReadKey();
+                Pagamento(Quantia);
+            }
+            Console.ReadKey();
         }
 
         public static void Cardapio(string[] Alimentos, string[] Bebidas_Alcoólicas, string[] Bebidas_Simples, int[] preço, int temp)
@@ -286,9 +347,36 @@ namespace Formulario
                 {
                     continue;
                 }
-                Console.WriteLine("{0} - {1} R$ {2} x {3}\n", percorrer + 1, NotaFiscal[percorrer], valorNotaFiscal[percorrer], quantidade1[percorrer]);
+                Console.WriteLine("{0} - {1} - R$ {2} x {3}\n", percorrer + 1, NotaFiscal[percorrer], valorNotaFiscal[percorrer], quantidade1[percorrer]);
             }
-            Console.WriteLine("Total da compra: {0}", Quantia);
+            Console.WriteLine("Total da compra: R$ {0}\n", Quantia);
+        }
+        public static void Pagamento(int Quantia)
+        {
+            int opcaoPagamento = 0, parcelar = 0;
+            Console.WriteLine("Qual a forma de pagamento? \n | 1 - DÉBITO | 2 - CRÉDITO |");
+            opcaoPagamento = int.Parse(Console.ReadLine());
+            switch(opcaoPagamento)
+            {
+                case 1:
+                    Console.WriteLine("Débito selecionado...Confira o valor e insira o cartão na maquininha!");
+                    Console.WriteLine("R$ {0} à vista", Quantia);
+                    Console.ReadKey();
+                    Console.WriteLine("PAGAMENTO APROVADO!\nPor favor retire o cartão");
+                    Console.ReadKey();
+                    Console.WriteLine("Obrigado pela preferência, volte sempre! ♥");
+                    break;
+                case 2:
+                    Console.WriteLine("Crédito selecionado...Em quantas vezes será? Obs: No máximo 3x");
+                    parcelar = int.Parse(Console.ReadLine());
+                    Console.WriteLine("R$ {0} parcelado em {1}x, parcelas de R$ {2}", Quantia, parcelar, Quantia/parcelar);
+                    Console.WriteLine("Insira o cartão da maquininha");
+                    Console.ReadKey();
+                    Console.WriteLine("PAGAMENTO APROVADO!\nPor favor retire o cartão");
+                    Console.ReadKey();
+                    Console.WriteLine("Obrigado pela preferência, volte sempre! ♥");
+                    break;
+            }
         }
     }
 }
